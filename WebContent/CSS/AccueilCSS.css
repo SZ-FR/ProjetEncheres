@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+
+
+
+body
+	{
+		background: url("http://iwallpapers.free.fr/upload/2012/01/31/20120131134312-95a89dfc.jpg");
+	
+	}
+	
+.para{
+	 border-color:aqua;
+	 text-shadow: 2px 4px 3px rgba(0,0,0,0.3)
+	 inherit;
+	 padding: 10px 50px 20px;
+	 font-size: 1.2em;
+	    
+	 }
+	     
+	     
+h3{
+	
+	display:flex;
+	justify-content: center;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+	letter-spacing: 3px;
+	font-family:inherit ;
+	color:#000000;
+	
+}	     
+	     
+.container
+{
+     display : flex;
+     flex-direction : column;
+     margin-left: 1750px;
+     margin-top: -50px;
+   
+     
+}
+ 
+.lien
+	{
+     flex-direction : column;  
+     font-family:inherit ;  
+     text-shadow: 2px 4px 3px rgba(0,0,0,0.3); 
+     font-weight: bold;
+	}
+	
+.btnLien
+{
+	box-shadow:inset 1px 1px 14px 1px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#768d87;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 7px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+
+.btnLien:hover{
+	
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	background-color:#6c7c7c;
+
+	
+}
+
+.btnLien:active {
+	position:relative;
+	top:1px;
+}
+
+
+.titre{
+	margin-top: -125px;
+	
+   } 
+h1
+	{
+
+	display:flex;
+	justify-content: flex-start;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    letter-spacing: 3px;
+	font-family:inherit ;
+	color:#000000;
+	
+	}
+	
+h2
+	{
+	
+	display:flex;
+	justify-content: center;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+	font-family:inherit ;
+	letter-spacing: 3px;
+	}
+	
+
+.btn {
+
+	border:medium;
+	background-color: #c0c0c0;
+	box-shadow: 3px 3px 12px #ffffff;
+	-webkit-box-shadow: 3px 3px 12px #ffffff;
+	-moz-box-shadow: 3px 3px 12px #ffffff;
+	font-size: 0.9em;
+}
+
+
+.btn:hover {
+	
+	padding: 3px;
+	background-color: #8080ff;
+	box-shadow: 6px 1px 4px #205867;
+	-webkit-box-shadow: 6px 1px 4px #205867;
+	-moz-box-shadow: 6px 1px 4px #205867;
+
+	}
+
+.label{
+	
+ 	display: flex;
+ 	justify-content: center;
+ 	font-weight: bold;
+	}
+ 
+
+#fld-favorite{
+	display:flex;
+	justify-content: center;
+}
+
+.conteneur{
+  margin-left:780px;
+  border: 3px solid black;
+  width: 15%;
+  box-shadow: 6px 3px 4px 6px #205867;
+	-webkit-box-shadow: 6px 2px 4px 4px #205867;
+	-moz-box-shadow: 6px 2.5px 4px 4px #205867;
+  
+}
+
+.recherche{
+	
+	margin-left:45px;
+}
+.categories{
+	
+	margin-left:45px;
+}
+
+.img{
+	
+	margin-top:px;
+	display: flex;
+	justify-content: center;
+	margin-top: 45px;
+}

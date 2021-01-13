@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+
+body
+	{
+		background: url("http://iwallpapers.free.fr/upload/2012/01/31/20120131134312-95a89dfc.jpg");
+	}
+
+.img
+{
+	position: absolute;
+	margin-top: -75px;
+}
+
+
+.dialog-form{
+	
+	display: flex;
+	justify-content: center;
+	margin-top: 70px;
+	  box-shadow: 6px 3px 4px 6px #205867;
+	-webkit-box-shadow: 6px 2px 4px 4px #205867;
+	-moz-box-shadow: 6px 2.5px 4px 4px #205867;
+	margin-left:350px;
+	margin-right:350px;
+    border: 3px solid black;
+	
+	}
+	
+.fld-field{
+
+	width:150px;
+	background-color:#DFFFE7;
+	
+}
+
+#bouton
+{
+	border: medium;
+	padding: 3px;
+	padding-bottom: 3px;
+	
+}
+
+.boutonForm:hover{
+	
+	padding: 3px;
+	background-color: #8080ff;
+	box-shadow: 6px 1px 4px #205867;
+	-webkit-box-shadow: 6px 1px 4px #205867;
+	-moz-box-shadow: 6px 1px 4px #205867;
+}
+
