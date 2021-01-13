@@ -83,7 +83,7 @@ public class EncheresDal {
 			return listeEncheres;
 		}
 	
-		public static void delete(int no_enchere)
+		public void delete(int no_enchere)
 		 {
 		 	try(Connection cnx = Utils.getConnection())
 		 	{
