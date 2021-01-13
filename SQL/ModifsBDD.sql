@@ -1,0 +1,7 @@
+EXEC sp_rename 'ARTICLES_VENDUS.no_utilisateur', 'no_vendeur', 'COLUMN';
+
+ALTER TABLE ARTICLES_VENDUS ADD no_acheteur INTEGER NULL;
+GO
+
+ALTER TABLE ARTICLES_VENDUS ADD FOREIGN KEY (no_acheteur) REFERENCES UTILISATEURS(no_utilisateur);
+GO

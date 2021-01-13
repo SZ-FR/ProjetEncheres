@@ -23,6 +23,6 @@
         <br><button class="button"  type="submit" value="VALIDER">Valider</button>
         
     </div>
-  <br><a href="/ProjetApplication/Accueil">Retour accueil</a>
+  <br><a href="/ProjetEncheres/Accueil">Retour accueil</a>
 </body>
 </html>
