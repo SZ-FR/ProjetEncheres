@@ -28,18 +28,8 @@ h3{
 	font-family:inherit ;
 	color:#000000;
 	
-}	     
-	     
-.container
-{
-     display : flex;
-     flex-direction : column;
-     margin-left: 1750px;
-     margin-top: -50px;
-   
-     
-}
- 
+ }	     
+	 
 .lien
 	{
      flex-direction : column;  
@@ -142,7 +132,7 @@ h2
 }
 
 .conteneur{
-  margin-left:780px;
+  margin-left:600px;
   border: 3px solid black;
   width: 15%;
   box-shadow: 6px 3px 4px 6px #205867;
@@ -151,13 +141,47 @@ h2
   
 }
 
+.vendre{
+	
+	
+	margin-top:-150px;
+	 margin-left:950px;
+	 border: 3px solid black;
+  width: 15%;
+  box-shadow: 6px 3px 4px 6px #205867;
+	-webkit-box-shadow: 6px 2px 4px 4px #205867;
+	-moz-box-shadow: 6px 2.5px 4px 4px #205867;
+}
+
+.btnVendre{
+	
+	margin-left:90px;
+	border:medium;
+	background-color: #c0c0c0;
+	box-shadow: 3px 3px 12px #ffffff;
+	-webkit-box-shadow: 3px 3px 12px #ffffff;
+	-moz-box-shadow: 3px 3px 12px #ffffff;
+	font-size: 0.9em;
+	
+}
+
+.btnVendre:hover {
+	
+	padding: 3px;
+	background-color: #8080ff;
+	box-shadow: 6px 1px 4px #205867;
+	-webkit-box-shadow: 6px 1px 4px #205867;
+	-moz-box-shadow: 6px 1px 4px #205867;
+
+	}
+
 .recherche{
 	
 	margin-left:45px;
 }
 .categories{
 	
-	margin-left:45px;
+	margin-left:50px;
 }
 
 .img{
@@ -167,3 +191,12 @@ h2
 	justify-content: center;
 	margin-top: 45px;
 }
+.container
+	{
+     display : flex;
+     flex-direction : column;
+     margin-left: 1750px;
+     margin-top: -50px;
+   
+     
+	}
