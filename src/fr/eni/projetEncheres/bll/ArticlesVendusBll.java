@@ -10,7 +10,7 @@ import utils.MonLogger;
 public class ArticlesVendusBll {
 	
 private static Logger logger = MonLogger.getLogger("UtilisateursBll");
-	
+
 	public void insert(ArticlesVendusBo article_vendu) throws Exception
  {
 	

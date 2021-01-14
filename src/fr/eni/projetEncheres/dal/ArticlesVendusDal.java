@@ -30,6 +30,11 @@ private static Logger logger = MonLogger.getLogger("ProjetApplication");
 public ArticlesVendusDal() throws IOException {
 }
 
+
+/**
+ * methode en charge d'inseré un article dans la base de donnée
+ * @param article_vendu 
+ */
 public void insert(ArticlesVendusBo article_vendu)
 {
 	try(Connection cnx = Utils.getConnection())
