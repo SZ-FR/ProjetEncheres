@@ -2,7 +2,7 @@ package fr.eni.projetEncheres.bo;
 
 public class CategoriesBo { 
 	
-	private int no_categorie;
+	private int noCategorie;
 	private String libelle;
 
 
@@ -17,12 +17,12 @@ public class CategoriesBo {
 	}
 
 	//Getters and setters
-	public int getNo_categorie() {
-		return no_categorie;
+	public int getNoCategorie() {
+		return noCategorie;
 	}
 
-	public void setNo_categorie(int no_categorie) {
-		this.no_categorie = no_categorie;
+	public void setNoCategorie(int noCategorie) {
+		this.noCategorie = noCategorie;
 	}
 
 	public String getLibelle() {
@@ -36,7 +36,7 @@ public class CategoriesBo {
 	//methode toString
 	@Override
 	public String toString() {
-		return "Categories [no_categorie=" + no_categorie + ", libelle=" + libelle + "]";
+		return "Categories [noCategorie=" + noCategorie + ", libelle=" + libelle + "]";
 	}
 
 }

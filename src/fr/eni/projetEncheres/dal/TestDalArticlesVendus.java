@@ -18,7 +18,7 @@ public static void main(String[] args) throws IOException {
 		
 		ArticlesVendusDal article1 = new ArticlesVendusDal();
 		ArticlesVendusDal article2 = new ArticlesVendusDal();
-		//Articles_vendusdal article3 = new Articles_vendusdal();
+	
 		 String str="2015-03-31";  
 		 Date date=Date.valueOf(str);//converting string into sql date  
 //		LocalDate date = LocalDate.of(2020, Month.JANUARY, 8);

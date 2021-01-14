@@ -18,15 +18,15 @@ public class RetraitsBll {
 		if(retrait.getVille().isEmpty()) {
 			throw new Exception("Ville manquante");
 		}
-		if(retrait.getCode_postal().isEmpty()) {
+		if(retrait.getCodePostal().isEmpty()) {
 			throw new Exception("Code postal manquant");
 		}
 		
 		RetraitsDal.insert(retrait);
 	}
 
-	public static RetraitsBo get(int no_retrait)  {
-		return RetraitsDal.get(no_retrait);
+	public static RetraitsBo get(int noRetrait)  {
+		return RetraitsDal.get(noRetrait);
 	}
 	
 	public static List<RetraitsBo>  SelectALL() {
@@ -38,12 +38,12 @@ public class RetraitsBll {
 			
 	}
 	
-	public static void delete(int no_retrait) throws Exception {
-        if(no_retrait <= 0)
+	public static void delete(int noRetrait) throws Exception {
+        if(noRetrait <= 0)
         {
-            throw new Exception("n° retrait incorrect");
+            throw new Exception("numéro de retrait incorrect");
         }
-        RetraitsDal.delete(no_retrait);
+        RetraitsDal.delete(noRetrait);
 	}
 							
 

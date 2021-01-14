@@ -3,20 +3,22 @@ package fr.eni.projetEncheres.bo;
 import java.sql.Date;
 import java.time.LocalDate;
 
-public class EncheresBo {private int no_enchere;
-private Date date_enchere;
-private int montant_enchere;
-private int no_article;
-private int no_utilisateur;
+public class EncheresBo {
+	
+	private int noEnchere;
+	private Date dateEnchere;
+	private int montantEnchere;
+	private int noArticle;
+	private int noUtilisateur;
 
 	//constructeur
-	public EncheresBo(int no_enchere, Date date_enchere, int montant_enchere, int no_article, int no_utilisateur) {
+	public EncheresBo(int noEnchere, Date dateEnchere, int montantEnchere, int noArticle, int noUtilisateur) {
 	super();
-	this.no_enchere = no_enchere;
-	this.date_enchere = date_enchere;
-	this.montant_enchere = montant_enchere;
-	this.no_article = no_article;
-	this.no_utilisateur = no_utilisateur;
+	this.noEnchere = noEnchere;
+	this.dateEnchere = dateEnchere;
+	this.montantEnchere = montantEnchere;
+	this.noArticle = noArticle;
+	this.noUtilisateur = noUtilisateur;
 	}
 	
 	public EncheresBo() {
@@ -25,50 +27,50 @@ private int no_utilisateur;
 	
 	
 	//getters and setters
-	public int getNo_enchere() {
-		return no_enchere;
+	public int getNoEnchere() {
+		return noEnchere;
 	}
 
-	public void setNo_enchere(int no_enchere) {
-		this.no_enchere = no_enchere;
+	public void setNoEnchere(int noEnchere) {
+		this.noEnchere = noEnchere;
 	}
 
-	public Date getDate_enchere() {
-		return date_enchere;
+	public Date getDateEnchere() {
+		return dateEnchere;
 	}
 
-	public void setDate_enchere(Date date) {
-		this.date_enchere = date;
+	public void setDateEnchere(Date date) {
+		this.dateEnchere = date;
 	}
 
-	public int getMontant_enchere() {
-		return montant_enchere;
+	public int getMontantEnchere() {
+		return montantEnchere;
 	}
 
-	public void setMontant_enchere(int montant_enchere) {
-		this.montant_enchere = montant_enchere;
+	public void setMontantEnchere(int montantEnchere) {
+		this.montantEnchere = montantEnchere;
 	}
 
-	public int getNo_article() {
-		return no_article;
+	public int getNoArticle() {
+		return noArticle;
 	}
 
-	public void setNo_article(int no_article) {
-		this.no_article = no_article;
+	public void setNoArticle(int noArticle) {
+		this.noArticle = noArticle;
 	}
 
-	public int getNo_utilisateur() {
-		return no_utilisateur;
+	public int getNoUtilisateur() {
+		return noUtilisateur;
 	}
 
-	public void setNo_utilisateur(int no_utilisateur) {
-		this.no_utilisateur = no_utilisateur;
+	public void setNoUtilisateur(int noUtilisateur) {
+		this.noUtilisateur = noUtilisateur;
 	}
 
 	//methode toString
 	@Override
 	public String toString() {
-		return "Encheres [no_enchere=" + no_enchere + ", date_enchere=" + date_enchere + ", montant_enchere="
-				+ montant_enchere + ", no_article=" + no_article + ", no_utilisateur=" + no_utilisateur + "]";
+		return "Encheres [noEnchere=" + noEnchere + ", dateEnchere=" + dateEnchere + ", montantEnchere="
+				+ montantEnchere + ", noArticle=" + noArticle + ", noUtilisateur=" + noUtilisateur + "]";
 	}
 }

@@ -11,28 +11,28 @@ public class ArticlesVendusBll {
 	
 private static Logger logger = MonLogger.getLogger("UtilisateursBll");
 
-	public void insert(ArticlesVendusBo article_vendu) throws Exception
+	public void insert(ArticlesVendusBo articleVendu) throws Exception
  {
 	
 		ArticlesVendusDal A1 = new ArticlesVendusDal();
 	
-		if(article_vendu.getNom_article().isEmpty())
+		if(articleVendu.getNomArticle().isEmpty())
 			
 		 {
-			throw new Exception("nom article incorrect");
+			throw new Exception("Nom article incorrect");
 		 }
 		
-		A1.insert(article_vendu);
+		A1.insert(articleVendu);
 	}
 	
-	public static ArticlesVendusBo get(int no_article) throws Exception {
+	public static ArticlesVendusBo get(int noArticle) throws Exception {
 
 		ArticlesVendusDal A1 = new ArticlesVendusDal();
 		
-        if(no_article <= 0){
+        if(noArticle <= 0){
             throw new Exception("Valeur incorrecte");
         }
-        return A1.get(no_article);
+        return A1.get(noArticle);
     }
 	
  public static List<ArticlesVendusBo> selectAll() throws Exception {

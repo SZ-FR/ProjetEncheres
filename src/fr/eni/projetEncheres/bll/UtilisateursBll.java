@@ -29,14 +29,14 @@ public class UtilisateursBll {
 		u1.insert(utilisateur);
 	}
 	
-	public UtilisateursBo get(int no_utilisateur) throws Exception {
+	public UtilisateursBo get(int noUtilisateur) throws Exception {
 		
 		UtilisateursDal u1 = new UtilisateursDal();
-		 if(no_utilisateur <= 0)
+		 if(noUtilisateur <= 0)
 	        {
-	            throw new Exception("n° utilisateur incorrect");
+	            throw new Exception("numéro utilisateur incorrect");
 	        }
-		return u1.get(no_utilisateur);
+		return u1.get(noUtilisateur);
 	        		
 	}
 	
@@ -49,7 +49,7 @@ public class UtilisateursBll {
 	        }
 		 if(pseudo.equals(""))
 		 {
-			 throw new Exception("pseudo déjà prit");
+			 throw new Exception("pseudo déjà utilisé");
 		 }
 		return u1.get(pseudo);
 		
@@ -68,14 +68,14 @@ public class UtilisateursBll {
 			
 	}
 	
-	public void delete(int no_utilisateur) throws Exception {
+	public void delete(int noUtilisateur) throws Exception {
 		UtilisateursDal u1 = new UtilisateursDal();
 		
-        if(no_utilisateur <= 0)
+        if(noUtilisateur <= 0)
         {
-            throw new Exception("n° utilisateur incorrect");
+            throw new Exception("numéro utilisateur incorrect");
         }
-        u1.delete(no_utilisateur);
+        u1.delete(noUtilisateur);
 	}
 
 

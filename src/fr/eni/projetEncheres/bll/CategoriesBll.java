@@ -19,14 +19,14 @@ public class CategoriesBll {
     }
 
 	
-	public static CategoriesBo get(int no_categorie) throws Exception {
+	public static CategoriesBo get(int noCategorie) throws Exception {
 
 		CategoriesDal c1 = new CategoriesDal();
 		
-        if(no_categorie <= 0){
+        if(noCategorie <= 0){
             throw new Exception("Valeur incorrecte");
         }
-        return c1.get(no_categorie);
+        return c1.get(noCategorie);
     }
 	
 	
@@ -41,14 +41,14 @@ public class CategoriesBll {
     }
 	
 	
-	public static void delete(int no_categorie) throws Exception {
+	public static void delete(int noCategorie) throws Exception {
 		
 		CategoriesDal c1 = new CategoriesDal();
 
-        if(no_categorie <= 0){
+        if(noCategorie <= 0){
             throw new Exception("Valeur incorrecte");
         }
-        c1.delete(no_categorie);
+        c1.delete(noCategorie);
     }
 	
 	

@@ -20,7 +20,14 @@ public class RetraitsDal {
     private static final String DELETE = "DELETE RETRAITS WHERE no_retrait = ?";
 
     private static Logger logger = MonLogger.getLogger("ProjetApplication");
-
+    
+    
+    
+/**
+ * 
+ * Méthode permettant de créer un retrait
+ * @throws IOException
+ */
     public RetraitsDal() throws IOException {
     }
 
@@ -30,7 +37,7 @@ public class RetraitsDal {
     	{
     		PreparedStatement rqt = cnx.prepareStatement(INSERT);
     		rqt.setString(1, retrait.getRue());
-    		rqt.setString(2, retrait.getCode_postal());
+    		rqt.setString(2, retrait.getCodePostal());
     		rqt.setString(3, retrait.getVille());
     		
     		rqt.executeUpdate();
@@ -42,21 +49,29 @@ public class RetraitsDal {
     	
     }
     
-    public static RetraitsBo get(int no_retrait)
+    
+
+/**
+ * 
+ *     Méthode qui récupère un retrait avec son ID
+ * @param noRetrait
+ * @return
+ */
+    public static RetraitsBo get(int noRetrait)
     {
     	RetraitsBo result = null;
     	try(Connection cnx = Utils.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(GET_BY_NO_RETRAIT);
-    		rqt.setInt(1, no_retrait);
+    		rqt.setInt(1, noRetrait);
     		ResultSet rs = rqt.executeQuery();
     		
     		if(rs.next())
     		{
     			result = new RetraitsBo();
-    			result.setNo_retrait(rs.getInt("no_retrait"));
+    			result.setNoRetrait(rs.getInt("no_retrait"));
     			result.setRue(rs.getString("rue"));
-    			result.setCode_postal(rs.getString("code_postal"));
+    			result.setCodePostal(rs.getString("code_postal"));
     			result.setVille(rs.getString("ville"));
     			
     		}
@@ -67,6 +82,13 @@ public class RetraitsDal {
     	return result;
     }
     
+    
+    
+/**
+ * 
+ * Méthode récupérant une liste des retraits présents dans la BDD
+ * @return
+ */
     public static List<RetraitsBo> selectALL()
     
     {
@@ -79,9 +101,9 @@ public class RetraitsDal {
             while(rs.next())
             {
             	RetraitsBo removal = new RetraitsBo();
-            	removal.setNo_retrait(rs.getInt("no_retrait"));
+            	removal.setNoRetrait(rs.getInt("no_retrait"));
             	removal.setRue(rs.getString("rue"));
-            	removal.setCode_postal(rs.getString("code_postal"));
+            	removal.setCodePostal(rs.getString("code_postal"));
             	removal.setVille(rs.getString("ville"));
             	utilisateur.add(removal);
             }
@@ -91,14 +113,22 @@ public class RetraitsDal {
     	return utilisateur;
     }
     
+    
+    
+    
+/**
+ * 
+ * Méthode permettant la mise à jour des infos dans la table Retraits de la BDD
+ * @param retrait
+ */
     public static void update(RetraitsBo retrait)
     {
     	try(Connection cnx = Utils.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(UPDATE);
-    		rqt.setInt(1, retrait.getNo_retrait());
+    		rqt.setInt(1, retrait.getNoRetrait());
     		rqt.setString(2,retrait.getRue());
-    		rqt.setString(3, retrait.getCode_postal());
+    		rqt.setString(3, retrait.getCodePostal());
     		rqt.setString(4, retrait.getVille());
     		
     		
@@ -109,12 +139,19 @@ public class RetraitsDal {
 		}
     }
     
-    public static void delete(int no_retrait)
+    
+    
+/**
+ * 
+ *     Méthode supprimant un retrait avec son ID
+ * @param noRetrait
+ */
+    public static void delete(int noRetrait)
     {
     	try(Connection cnx = Utils.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(DELETE);
-    		rqt.setInt(1, no_retrait);
+    		rqt.setInt(1, noRetrait);
     		rqt.executeUpdate();
     	} catch (SQLException e) {
 			// TODO Auto-generated catch block

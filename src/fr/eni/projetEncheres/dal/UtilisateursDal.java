@@ -28,7 +28,14 @@ package fr.eni.projetEncheres.dal;
 
 	    public UtilisateursDal() throws IOException {
 	    }
+	    
+	    
 
+/**
+ * 
+ * Méthode créant un utilisateur dans la base de données
+ * @param utilisateur
+ */
 	    public void insert(UtilisateursBo utilisateur)
 	    {
 	    	try(Connection cnx = Utils.getConnection())
@@ -40,9 +47,9 @@ package fr.eni.projetEncheres.dal;
 	    		rqt.setString(4, utilisateur.getEmail());
 	    		rqt.setString(5, utilisateur.getTelephone());
 	    		rqt.setString(6, utilisateur.getRue());
-	    		rqt.setString(7, utilisateur.getCode_postal());
+	    		rqt.setString(7, utilisateur.getCodePostal());
 	    		rqt.setString(8, utilisateur.getVille());
-	    		rqt.setString(9, utilisateur.getMot_de_passe());
+	    		rqt.setString(9, utilisateur.getMotDePasse());
 	    		rqt.setInt(10, utilisateur.getCredit());
 	    		rqt.setInt(11, utilisateur.getAdministrateur());
 	    		
@@ -51,7 +58,7 @@ package fr.eni.projetEncheres.dal;
 				if (nbRows == 1) {
 					ResultSet rs = rqt.getGeneratedKeys();
 					if (rs.next()) {
-						utilisateur.setNo_utilisateur(rs.getInt(1));
+						utilisateur.setNoUtilisateur(rs.getInt(1));
 					}
 				}
 			} catch (SQLException ex) {
@@ -61,28 +68,37 @@ package fr.eni.projetEncheres.dal;
 	    	
 	    }
 	    
-	    public UtilisateursBo get(int no_utilisateur)
+	    
+	    
+
+/**
+ * 
+ * Méthode pour récupérer un utilisateur avec son ID	    
+ * @param noUtilisateur
+ * @return
+ */
+	    public UtilisateursBo get(int noUtilisateur)
 	    {
 	    	UtilisateursBo result = null;
 	    	try(Connection cnx = Utils.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(GET_BY_NO_UTILISATEUR);
-	    		rqt.setInt(1, no_utilisateur);
+	    		rqt.setInt(1, noUtilisateur);
 	    		ResultSet rs = rqt.executeQuery();
 	    		
 	    		if(rs.next())
 	    		{
 	    			result = new UtilisateursBo();
-	    			result.setNo_utilisateur(rs.getInt("no_utilisateur"));
+	    			result.setNoUtilisateur(rs.getInt("no_utilisateur"));
 	    			result.setPseudo(rs.getString("pseudo"));
 	    			result.setNom(rs.getString("nom"));
 	    			result.setPrenom(rs.getString("prenom"));
 	    			result.setEmail(rs.getString("email"));
 	    			result.setTelephone(rs.getString("telephone"));
 	    			result.setRue(rs.getString("rue"));
-	    			result.setCode_postal(rs.getString("code_postal"));
+	    			result.setCodePostal(rs.getString("code_postal"));
 	    			result.setVille(rs.getString("ville"));
-	    			result.setMot_de_passe(rs.getString("mot_de_passe"));
+	    			result.setMotDePasse(rs.getString("mot_de_passe"));
 	    			result.setCredit(rs.getInt("credit"));
 	    			result.setAdministrateur(rs.getInt("administrateur"));
 	    		}
@@ -93,6 +109,14 @@ package fr.eni.projetEncheres.dal;
 	    	return result;
 	    }
 	    
+	    
+	    
+/**
+ * 
+ * Méthode récupérant un utilisateur grâce à son pseudo	    
+ * @param pseudo
+ * @return
+ */
 	    public UtilisateursBo get(String pseudo)
 	    {
 	    	UtilisateursBo result = null;
@@ -105,16 +129,16 @@ package fr.eni.projetEncheres.dal;
 	    		if(rs.next())
 	    		{
 	    			result = new UtilisateursBo();
-	    			result.setNo_utilisateur(rs.getInt("no_utilisateur"));
+	    			result.setNoUtilisateur(rs.getInt("no_utilisateur"));
 	    			result.setPseudo(rs.getString("pseudo"));
 	    			result.setNom(rs.getString("nom"));
 	    			result.setPrenom(rs.getString("prenom"));
 	    			result.setEmail(rs.getString("email"));
 	    			result.setTelephone(rs.getString("telephone"));
 	    			result.setRue(rs.getString("rue"));
-	    			result.setCode_postal(rs.getString("code_postal"));
+	    			result.setCodePostal(rs.getString("code_postal"));
 	    			result.setVille(rs.getString("ville"));
-	    			result.setMot_de_passe(rs.getString("mot_de_passe"));
+	    			result.setMotDePasse(rs.getString("mot_de_passe"));
 	    			result.setCredit(rs.getInt("credit"));
 	    			result.setAdministrateur(rs.getInt("administrateur"));
 	    		}
@@ -124,6 +148,13 @@ package fr.eni.projetEncheres.dal;
 	    	
 	    	return result;
 	    }
+	    
+	    
+/**
+ * 
+ * Méthode remontant la liste de tous les utilisateurs enregistrés dans la base de données	    
+ * @return
+ */
 	    
 	    public List<UtilisateursBo> selectALL()
 	    
@@ -148,6 +179,12 @@ package fr.eni.projetEncheres.dal;
 	    }
 	    
 	    
+	    
+/**
+ * 
+ * Méthode permettant la mise à jours des infos des utilisateurs
+ * @param utilisateur
+ */
 	    public void update(UtilisateursBo utilisateur)
 	    {
 	    	try(Connection cnx = Utils.getConnection())
@@ -159,12 +196,12 @@ package fr.eni.projetEncheres.dal;
 	    		rqt.setString(4, utilisateur.getEmail());
 	    		rqt.setString(5, utilisateur.getTelephone());
 	    		rqt.setString(6, utilisateur.getRue());
-	    		rqt.setString(7, utilisateur.getCode_postal());
+	    		rqt.setString(7, utilisateur.getCodePostal());
 	    		rqt.setString(8, utilisateur.getVille());
-	    		rqt.setString(9, utilisateur.getMot_de_passe());
+	    		rqt.setString(9, utilisateur.getMotDePasse());
 	    		rqt.setInt(10, utilisateur.getCredit());
 	    		rqt.setInt(11, utilisateur.getAdministrateur());
-	    		rqt.setInt(12, utilisateur.getNo_utilisateur());
+	    		rqt.setInt(12, utilisateur.getNoUtilisateur());
 	    		
 	    		rqt.executeUpdate();
 	    		
@@ -173,12 +210,19 @@ package fr.eni.projetEncheres.dal;
 			}
 	    }
 	    
-	    public void delete(int no_utilisateur)
+	    
+
+/**
+ * 
+ * Méthode pour supprimer un utilisateur avec son ID	    
+ * @param noUtilisateur
+ */
+	    public void delete(int noUtilisateur)
 	    {
 	    	try(Connection cnx = Utils.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(DELETE);
-	    		rqt.setInt(1, no_utilisateur);
+	    		rqt.setInt(1, noUtilisateur);
 	    		rqt.executeUpdate();
 	    	} catch (SQLException e) {
 				// TODO Auto-generated catch block

@@ -6,13 +6,15 @@ import java.util.logging.Logger;
 import fr.eni.projetEncheres.bo.EncheresBo;
 import fr.eni.projetEncheres.dal.EncheresDal;
 import utils.MonLogger;
+
+
 public class EncheresBll {
 
 	public void insert(EncheresBo enchere) throws Exception {
 
 		EncheresDal A1 = new EncheresDal();
 		
-		if(enchere.getMontant_enchere()==0) {
+		if(enchere.getMontantEnchere()==0) {
 			throw new Exception("Montant saisi incorrect");
 		}
 		
