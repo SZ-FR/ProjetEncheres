@@ -9,7 +9,6 @@ import utils.MonLogger;
 public class EncheresBll {
 
 	public void insert(EncheresBo enchere) throws Exception {
-		final String variablePourTestPush;
 
 		EncheresDal A1 = new EncheresDal();
 		
