@@ -101,6 +101,7 @@
                 </div>
             </form>
             </div>
+            <br><a href="/ProjetEncheres/Accueil">Retour accueil</a>
 
 </body>
 </html>
