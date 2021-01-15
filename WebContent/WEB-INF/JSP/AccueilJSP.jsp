@@ -49,9 +49,10 @@ Nous proposons une solution qui permettrait l’acquisition de matériel de seco
        
        <button class="btn">go !</button><br><br></div><br>
        
-	<div class="vendre">
-		 <br><button class="btnVendre">Vendre un article !</button><br><br></div><br>
-   <br>
+	<br><div class="vendre">
+		 <br>
+		 <a class="btnVendre" href="/ProjetEncheres/BoutonVendre">Je clique ici pour vendre un article !</a></div>
+   <br><br>
   
 
 

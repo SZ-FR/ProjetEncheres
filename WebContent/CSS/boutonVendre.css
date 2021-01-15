@@ -1,0 +1,41 @@
+@charset "ISO-8859-1";
+
+body
+	{
+		background: url("http://iwallpapers.free.fr/upload/2012/01/31/20120131134312-95a89dfc.jpg");
+		
+		margin-left:800px;
+		margin-top:150px;
+        border: 10px double rgba(52,135,155,0.78);
+        border-radius: 0px 0px 33px 0px;
+        width: 15%;
+         -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 19px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+          box-shadow: -10px 0px 17px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+	
+	}
+	
+.titre{
+	margin-left: 65px;
+	font-family: monospace;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+	letter-spacing: 3px;
+	color:#000000;
+
+}
+
+
+.lienC{
+	display: flex;
+	justify-content: center;
+}
+
+.lienI{
+	display: flex;
+	justify-content: center;
+	
+}
+.para{
+	
+	display: flex;
+	justify-content: center;
+}

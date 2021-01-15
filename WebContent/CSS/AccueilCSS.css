@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-
-
-
 body
 	{
 		background: url("http://iwallpapers.free.fr/upload/2012/01/31/20120131134312-95a89dfc.jpg");
@@ -132,7 +129,7 @@ h2
 }
 
 .conteneur{
-  margin-left:600px;
+  margin-left:800px;
   border: 3px solid black;
   width: 15%;
   box-shadow: 6px 3px 4px 6px #205867;
@@ -141,27 +138,17 @@ h2
   
 }
 
-.vendre{
-	
-	
-	margin-top:-150px;
-	 margin-left:950px;
-	 border: 3px solid black;
-  width: 15%;
-  box-shadow: 6px 3px 4px 6px #205867;
-	-webkit-box-shadow: 6px 2px 4px 4px #205867;
-	-moz-box-shadow: 6px 2.5px 4px 4px #205867;
-}
 
 .btnVendre{
 	
-	margin-left:90px;
+	margin-left:820px;
 	border:medium;
-	background-color: #c0c0c0;
+	background-color:#6dd3c0;
 	box-shadow: 3px 3px 12px #ffffff;
 	-webkit-box-shadow: 3px 3px 12px #ffffff;
 	-moz-box-shadow: 3px 3px 12px #ffffff;
 	font-size: 0.9em;
+	font-family: cursive;
 	
 }
 
