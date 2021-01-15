@@ -33,7 +33,7 @@ public class RetraitsDal {
 
     public static void insert(RetraitsBo retrait)
     {
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(INSERT);
     		rqt.setString(1, retrait.getRue());
@@ -60,7 +60,7 @@ public class RetraitsDal {
     public static RetraitsBo get(int noRetrait)
     {
     	RetraitsBo result = null;
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(GET_BY_NO_RETRAIT);
     		rqt.setInt(1, noRetrait);
@@ -93,7 +93,7 @@ public class RetraitsDal {
     
     {
     	List<RetraitsBo> utilisateur = new ArrayList<>();
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(GET_ALL);
             ResultSet rs = rqt.executeQuery();
@@ -123,7 +123,7 @@ public class RetraitsDal {
  */
     public static void update(RetraitsBo retrait)
     {
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(UPDATE);
     		rqt.setInt(1, retrait.getNoRetrait());
@@ -148,7 +148,7 @@ public class RetraitsDal {
  */
     public static void delete(int noRetrait)
     {
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(DELETE);
     		rqt.setInt(1, noRetrait);

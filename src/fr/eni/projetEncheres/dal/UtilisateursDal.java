@@ -36,9 +36,9 @@ package fr.eni.projetEncheres.dal;
  * Méthode créant un utilisateur dans la base de données
  * @param utilisateur
  */
-	    public void insert(UtilisateursBo utilisateur)
+	    public static void insert(UtilisateursBo utilisateur)
 	    {
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
 	    		rqt.setString(1, utilisateur.getPseudo());
@@ -80,7 +80,7 @@ package fr.eni.projetEncheres.dal;
 	    public UtilisateursBo get(int noUtilisateur)
 	    {
 	    	UtilisateursBo result = null;
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(GET_BY_NO_UTILISATEUR);
 	    		rqt.setInt(1, noUtilisateur);
@@ -120,7 +120,7 @@ package fr.eni.projetEncheres.dal;
 	    public UtilisateursBo get(String pseudo)
 	    {
 	    	UtilisateursBo result = null;
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(GET_BY_PSEUDO);
 	    		rqt.setString(1, pseudo);
@@ -160,7 +160,7 @@ package fr.eni.projetEncheres.dal;
 	    
 	    {
 	    	List<UtilisateursBo> utilisateur = new ArrayList<>();
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(GET_ALL);
 	            ResultSet rs = rqt.executeQuery();
@@ -187,7 +187,7 @@ package fr.eni.projetEncheres.dal;
  */
 	    public void update(UtilisateursBo utilisateur)
 	    {
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(UPDATE);
 	    		rqt.setString(1, utilisateur.getPseudo());
@@ -219,7 +219,7 @@ package fr.eni.projetEncheres.dal;
  */
 	    public void delete(int noUtilisateur)
 	    {
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(DELETE);
 	    		rqt.setInt(1, noUtilisateur);

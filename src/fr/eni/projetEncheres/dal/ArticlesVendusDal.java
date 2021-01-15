@@ -37,7 +37,7 @@ public ArticlesVendusDal() throws IOException {
  */
 public void insert(ArticlesVendusBo articleVendu)
 {
-	try(Connection cnx = Utils.getConnection())
+	try(Connection cnx = ConnectionProvider.getConnection())
 	{
 		PreparedStatement rqt = cnx.prepareStatement(INSERT);
 		rqt.setString(1, articleVendu.getNomArticle());
@@ -68,7 +68,7 @@ public ArticlesVendusBo get(int noArticle)
 
 {
 	ArticlesVendusBo result = null;
-	try(Connection cnx = Utils.getConnection())
+	try(Connection cnx = ConnectionProvider.getConnection())
 	{
 		PreparedStatement rqt = cnx.prepareStatement(GET_BY_NO_ARTICLE);
 		rqt.setInt(1, noArticle);
@@ -105,7 +105,7 @@ public List<ArticlesVendusBo> selectALL()
 
 {
 	List<ArticlesVendusBo> articleVendu = new ArrayList<>();
-	try(Connection cnx = Utils.getConnection())
+	try(Connection cnx = ConnectionProvider.getConnection())
 	{
 		PreparedStatement rqt = cnx.prepareStatement(GET_ALL);
         ResultSet rs = rqt.executeQuery();
@@ -130,7 +130,7 @@ public List<ArticlesVendusBo> selectALL()
 
 public static void update(ArticlesVendusBo articleVendu)
 {
-	try(Connection cnx = Utils.getConnection())
+	try(Connection cnx = ConnectionProvider.getConnection())
 	{
 		PreparedStatement rqt = cnx.prepareStatement(UPDATE);
 		rqt.setString(1, articleVendu.getNomArticle());
@@ -158,7 +158,7 @@ public static void update(ArticlesVendusBo articleVendu)
 
 public static void delete(int noArticle)
 {
-	try(Connection cnx = Utils.getConnection())
+	try(Connection cnx = ConnectionProvider.getConnection())
 	{
 		PreparedStatement rqt = cnx.prepareStatement(DELETE);
 		rqt.setInt(1, noArticle);

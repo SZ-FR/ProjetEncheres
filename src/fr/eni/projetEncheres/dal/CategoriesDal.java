@@ -31,7 +31,7 @@ public class CategoriesDal {
  * @param categorie
  */
 	public  void insert(CategoriesBo categorie)  {
-		try(Connection cnx = Utils.getConnection()){
+		try(Connection cnx = ConnectionProvider.getConnection()){
 			PreparedStatement rqt = cnx.prepareStatement(INSERT, Statement.RETURN_GENERATED_KEYS);
 			rqt.setString(1, categorie.getLibelle());
 			
@@ -58,7 +58,7 @@ public class CategoriesDal {
 	public  CategoriesBo get(int noCategorie)
 	{
 		CategoriesBo result = null;
-		try(Connection cnx = Utils.getConnection())
+		try(Connection cnx = ConnectionProvider.getConnection())
 		{
 			PreparedStatement rqt = cnx.prepareStatement(GET_BY_ID);
 			rqt.setInt(1, noCategorie);
@@ -85,7 +85,7 @@ public class CategoriesDal {
 	public  List<CategoriesBo> selectALL()
 	{
 		List<CategoriesBo> categories = new ArrayList<>();
-		try(Connection cnx = Utils.getConnection())
+		try(Connection cnx = ConnectionProvider.getConnection())
 		{
 			PreparedStatement rqt = cnx.prepareStatement(GET_ALL);
 			ResultSet rs = rqt.executeQuery();

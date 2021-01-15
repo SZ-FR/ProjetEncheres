@@ -32,7 +32,7 @@ public class EncheresDal {
  * @param enchere
  */
 		public void insert(EncheresBo enchere )  {
-			try (Connection cnx = Utils.getConnection()) {
+			try (Connection cnx = ConnectionProvider.getConnection()) {
 				PreparedStatement rqt = cnx.prepareStatement(INSERT);
 				
 				rqt.setDate(1, today);
@@ -61,7 +61,7 @@ public class EncheresDal {
 			
 			EncheresBo result = null;
 			
-			try (Connection cnx = Utils.getConnection()) {
+			try (Connection cnx = ConnectionProvider.getConnection()) {
 				
 				PreparedStatement rqt = cnx.prepareStatement(GET_BY_ID);
 				rqt.setInt(1, id);
@@ -90,7 +90,7 @@ public class EncheresDal {
 			
 			List<EncheresBo> listeEncheres = new ArrayList<>();
 		
-			try (Connection cnx = Utils.getConnection()) {
+			try (Connection cnx = ConnectionProvider.getConnection()) {
 				PreparedStatement rqt = cnx.prepareStatement(GET_ALL);
 				ResultSet rs = rqt.executeQuery();
 				
@@ -119,7 +119,7 @@ public class EncheresDal {
 	
 		public void delete(int noEnchere)
 		 {
-		 	try(Connection cnx = Utils.getConnection())
+		 	try(Connection cnx = ConnectionProvider.getConnection())
 		 	{
 		 		PreparedStatement rqt = cnx.prepareStatement(DELETE);
 		 		rqt.setInt(1, noEnchere);
