@@ -110,7 +110,7 @@ public class CategoriesDal {
  */
 	public  void update(CategoriesBo categorie)
     {
-    	try(Connection cnx = Utils.getConnection())
+    	try(Connection cnx = ConnectionProvider.getConnection())
     	{
     		PreparedStatement rqt = cnx.prepareStatement(UPDATE);
     		rqt.setString(1, categorie.getLibelle());
@@ -129,7 +129,7 @@ public class CategoriesDal {
  */
 	 public  void delete(int noCategorie)
 	    {
-	    	try(Connection cnx = Utils.getConnection())
+	    	try(Connection cnx = ConnectionProvider.getConnection())
 	    	{
 	    		PreparedStatement rqt = cnx.prepareStatement(DELETE);
 	    		rqt.setInt(1, noCategorie);
